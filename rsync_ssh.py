@@ -445,8 +445,7 @@ class Rsync(threading.Thread):
 
         # Build list with defaults
         ssh_command = [
-            self.ssh_binary, "-q", "-T",
-            "-o", "ConnectTimeout="+str(self.timeout)
+            self.ssh_binary, "-q", "-T"
         ]
         if self.destination.get("remote_port"):
             ssh_command.extend(["-p", str(self.destination.get("remote_port"))])
